@@ -8,7 +8,7 @@ const p2Show = document.querySelector('#p2Show');
 let p1Score = 0;
 let p2Score = 0;
 
-let winningScore = 5;
+let winningScore = 3;
 let isGameover = false;
 
 p1Button.addEventListener('click', function(){
@@ -19,6 +19,8 @@ p1Button.addEventListener('click', function(){
             isGameover= true;
             p1Show.classList.add('winner');
             p2Show.classList.add('loser');
+            p1Button.disabled = true;
+            p2Button.disabled = true;
             
         }
         p1Show.textContent= p1Score;
@@ -36,6 +38,10 @@ p2Button.addEventListener('click', function(){
             isGameover= true;
             p2Show.classList.add('winner');
             p1Show.classList.add('loser');
+            p1Button.disabled = true;
+            p1Button.disabled = true;
+            p2Button.disabled = true;
+            
             
         }
         p2Show.textContent= p2Score;
@@ -51,6 +57,9 @@ resetButton.addEventListener('click', function(){
     p2Show.textContent= 0;
     p2Show.classList.remove('winner', 'loser');
     p1Show.classList.remove('winner', 'loser');
+    p1Button.disabled = false;
+    p2Button.disabled = false;
+            
 
     
 })
